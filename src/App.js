@@ -1,7 +1,8 @@
-import keyConceptsImage from "./assets/images/key-concepts.png";
 import componentsImage from "./assets/images/components.png";
 import stateImage from "./assets/images/state.png";
 import eventsImage from "./assets/images/events.png";
+import Header from "./components/Header/Header";
+import Concept from "./components/Header/Concept/Concepts";
 
 const concepts = [
 	{
@@ -27,27 +28,11 @@ const concepts = [
 function App() {
 	return (
 		<div>
-			<header>
-				<img src={keyConceptsImage} alt="Medal badge with a star" />
-				<h1>Key React Concepts</h1>
-				<p>Selected key React concepts you should know about</p>
-			</header>
+			<Header></Header>
 			<ul id="concepts">
-				<li className="concept">
-					<img src={concepts[0].image} alt={concepts[0].title} />
-					<h2>{concepts[0].title}</h2>
-					<p>{concepts[0].description}</p>
-				</li>
-				<li className="concept">
-					<img src={concepts[1].image} alt={concepts[1].title} />
-					<h2>{concepts[1].title}</h2>
-					<p>{concepts[1].description}</p>
-				</li>
-				<li className="concept">
-					<img src={concepts[2].image} alt={concepts[2].title} />
-					<h2>{concepts[2].title}</h2>
-					<p>{concepts[2].description}</p>
-				</li>
+				<Concept concept={concepts[0]}></Concept>
+				<Concept concept={concepts[1]}></Concept>
+				<Concept concept={concepts[2]}></Concept>
 			</ul>
 		</div>
 	);
